@@ -19,6 +19,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-
+        registry.enableSimpleBroker("/chat/");  /*Suscribirse a un canal*/
+        registry.setApplicationDestinationPrefixes("/app"); /*Enviar mensaje al chat desde el Cliente*/
     }
 }
