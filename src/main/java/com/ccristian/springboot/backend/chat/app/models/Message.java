@@ -1,6 +1,13 @@
 package com.ccristian.springboot.backend.chat.app.models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "messages")
 public class Message {
+
+    @Id
+    private String id;
 
     private String text;
     private Long date;
@@ -46,5 +53,13 @@ public class Message {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
